@@ -3,66 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diapositiva con Barra Decorativa</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      scroll-behavior: smooth;
-    }
-
-    section {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-    }
-
-    #fondo1 {
-      background-image: url('fondo1.png');
-    }
-
-    #fondo1::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100px; /* altura de la barra decorativa */
-      background-image: url('barra.png');
-      background-repeat: repeat-x; /* estilo mosaico horizontal */
-      background-size: contain;
-    }
-
-    #fondo2 {
-      background-image: url('fondo2.png');
-    }
-
-    h1 {
-      color: white;
-      font-size: 3rem;
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-      z-index: 1;
-    }
-  </style>
+  <title>Caramelo de Chocolate</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <section id="fondo1">
+    <!-- Contenedor de botones -->
+    <div class="botones-superior">
+      <!-- Botón sin enlace -->
+      <img src="boton_de_menu.png" alt="Menú" class="boton">
+
+      <!-- Botones con enlaces internos -->
+      <a href="somos.html">
+        <img src="boton_de_somos.png" alt="Somos" class="boton">
+      </a>
+
+      <a href="registro.html">
+        <img src="boton_de_registro.png" alt="Registro" class="boton">
+      </a>
+
+      <a href="sesion.html">
+        <img src="boton_de_sesion.png" alt="Sesión" class="boton">
+      </a>
+    </div>
+
+    <!-- Imagen central -->
+    <div class="imagen-centro"></div>
     <h1>Primera imagen</h1>
   </section>
 
   <section id="fondo2">
-    <h1>Segunda imagen</h1>
-  </section>
+  <div class="galeria">
+    <!-- Fila 1 -->
+    <div class="tarjeta">
+      <img src="pastel1.png" alt="Pastel de Chocolate">
+      <h3>Pastel de Chocolate</h3>
+      <p>Bizcocho húmedo con ganache de cacao peruano.</p>
+      <div class="botones">
+        <button class="corazon">❤️</button>
+        <button class="agregar">🛒 Agregar</button>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <img src="pastel2.png" alt="Pastel de Fresas">
+      <h3>Pastel de Fresas</h3>
+      <p>Crema chantilly y fresas frescas de temporada.</p>
+      <div class="botones">
+        <button class="corazon">❤️</button>
+        <button class="agregar">🛒 Agregar</button>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <img src="pastel3.png" alt="Pastel de Vainilla">
+      <h3>Pastel de Vainilla</h3>
+      <p>Suave bizcocho con glaseado artesanal.</p>
+      <div class="botones">
+        <button class="corazon">❤️</button>
+        <button class="agregar">🛒 Agregar</button>
+      </div>
+    </div>
+
+    <!-- Fila 2 (en el MISMO contenedor .galeria) -->
+    <div class="tarjeta">
+      <img src="pastel4.png" alt="Pastel de Frutas">
+      <h3>Pastel de Frutas</h3>
+      <p>Kiwi, mango y frutillas frescas.</p>
+      <div class="botones">
+        <button class="corazon">❤️</button>
+        <button class="agregar">🛒 Agregar</button>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <img src="pastel5.png" alt="Red Velvet">
+      <h3>Red Velvet</h3>
+      <p>Crema de queso y vainilla.</p>
+      <div class="botones">
+        <button class="corazon">❤️</button>
+        <button class="agregar">🛒 Agregar</button>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <img src="pastel6.png" alt="Pastel de Limón">
+      <h3>Pastel de Limón</h3>
+      <p>Glaseado cítrico natural.</p>
+      <div class="botones">
+        <button class="corazon">❤️</button>
+        <button class="agregar">🛒 Agregar</button>
+      </div>
+    </div>
+  </div>
+</section>
 </body>
 </html>
