@@ -1,0 +1,99 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "X",
+      "email": "X@email.com",
+      "password": "12345",
+      "telefono": "+1234567890",
+      "direccion": {
+        "calle": "x",
+        "ciudad": "x",
+        "codigo_postal": "x"
+      },
+      "fecha_registro": "2024-01-15T10:30:00",
+      "ultimo_acceso": "2024-01-20T15:45:00",
+      "activo": true
+    }
+  ],
+  "tickets_soporte": [
+    {
+      "id": "TKT-2024-001",
+      "usuario_id": 1,
+      "asunto": "Pedido incompleto",
+      "descripcion": "Mi pedido llegó sin el pastel de chocolate",
+      "categoria": "problema_pedido",
+      "estado": "abierto",
+      "prioridad": "alta",
+      "fecha_creacion": "2024-01-20T14:30:00",
+      "fecha_actualizacion": "2024-01-20T14:30:00",
+      "mensajes": [
+        {
+          "id": 1,
+          "tipo": "usuario",
+          "contenido": "Mi pedido llegó incompleto",
+          "timestamp": "2024-01-20T14:30:00"
+        },
+        {
+          "id": 2,
+          "tipo": "soporte",
+          "contenido": "Lamentamos lo sucedido. Investigaremos inmediatamente.",
+          "timestamp": "2024-01-20T15:00:00"
+        }
+      ]
+    }
+  ],
+  "pedidos": [
+    {
+      "id": "VENDOPANCITO",
+      "usuario_id": 1,
+      "productos": [
+        {
+          "id": "PANCITO",
+          "nombre": "PANCITO",
+          "cantidad": 1,
+          "precio": 1.00
+        },
+        {
+          "id": "PAN",
+          "nombre": "PAN",
+          "cantidad": 1,
+          "precio": 1.50
+        }
+      ],
+      "total": 2.50,
+      "estado": "entregado",
+      "fecha_pedido": "2024-01-19T10:00:00",
+      "fecha_entrega": "2024-01-20T14:00:00",
+      "direccion_entrega": "x"
+    }
+  ],
+  "productos": [
+    {
+      "id": "PANCITO",
+      "nombre": "PANCITO",
+      "categoria": "PANCITO",
+      "precio": 1.00,
+      "descripcion": "rico pancito",
+      "disponible": true,
+      "imagen": "PANCITO.JPG"
+    },
+    {
+      "id": "PAN",
+      "nombre": "PAN",
+      "categoria": "PAN",
+      "precio": 1.50,
+      "descripcion": "pan normalito",
+      "disponible": true,
+      "imagen": "PAN.JPG"
+    }
+  ],
+  "categorias_tickets": [
+    "problema_pedido",
+    "consulta_producto",
+    "sugerencia",
+    "queja",
+    "felicitacion",
+    "otros"
+  ]
+}
