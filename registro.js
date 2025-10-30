@@ -13,24 +13,6 @@ class ReposteriaDatabase {
                 productos: [
                     {
                         id: '000000001',
-                        nombre: 'PANCITO',
-                        categoria: 'PANCITO',
-                        precio: 1.00,
-                        descripcion: 'rico pancito',
-                        disponible: true,
-                        imagen: 'PANCITO.JPG'
-                    },
-                    {
-                        id: '000000002',
-                        nombre: 'PAN',
-                        categoria: 'PAN',
-                        precio: 1.50,
-                        descripcion: 'pan normalito',
-                        disponible: true,
-                        imagen: 'PAN.JPG'
-                    },
-                    {
-                        id: '000000003',
                         nombre: 'Shortcake de Fresa',
                         categoria: 'Postre',
                         precio: 'X',
@@ -39,7 +21,7 @@ class ReposteriaDatabase {
                         imagen: 'shortcake_fresa.jpg'
                     },
                     {
-                        id: '000000004',
+                        id: '000000002',
                         nombre: 'Tarta de Fresa',
                         categoria: 'Postre',
                         precio: 'X',
@@ -48,7 +30,7 @@ class ReposteriaDatabase {
                         imagen: 'tarta_fresa.jpg'
                     },
                     {
-                        id: '000000005',
+                        id: '000000003',
                         nombre: 'Cupcake de Fresa',
                         categoria: 'Postre',
                         precio: 'X',
@@ -57,7 +39,7 @@ class ReposteriaDatabase {
                         imagen: 'cupcake_fresa.jpg'
                     },
                     {
-                        id: '000000006',
+                        id: '000000004',
                         nombre: 'Chiffon Cremoso',
                         categoria: 'Postre',
                         precio: 'X',
@@ -66,7 +48,7 @@ class ReposteriaDatabase {
                         imagen: 'chiffon_cremoso.jpg'
                     },
                     {
-                        id: '000000007',
+                        id: '000000005',
                         nombre: 'Cupcake Chocolate',
                         categoria: 'Postre',
                         precio: 'X',
@@ -75,7 +57,7 @@ class ReposteriaDatabase {
                         imagen: 'cupcake_chocolate.jpg'
                     },
                     {
-                        id: '000000008',
+                        id: '000000006',
                         nombre: 'Whoopie de Pie',
                         categoria: 'Postre',
                         precio: 'X',
@@ -84,7 +66,7 @@ class ReposteriaDatabase {
                         imagen: 'whoopie_pie.jpg'
                     },
                     {
-                        id: '000000009',
+                        id: '000000007',
                         nombre: 'Pavlova',
                         categoria: 'Postre',
                         precio: 'X',
@@ -93,7 +75,7 @@ class ReposteriaDatabase {
                         imagen: 'pavlova.jpg'
                     },
                     {
-                        id: '000000010',
+                        id: '00000008',
                         nombre: 'Fresa con Crema',
                         categoria: 'Postre',
                         precio: 'X',
@@ -102,7 +84,7 @@ class ReposteriaDatabase {
                         imagen: 'fresa_crema.jpg'
                     },
                     {
-                        id: '000000011',
+                        id: '00000009',
                         nombre: 'Tartaleta de Limón',
                         categoria: 'Postre',
                         precio: 'X',
@@ -111,7 +93,7 @@ class ReposteriaDatabase {
                         imagen: 'tartaleta_limon.jpg'
                     },
                     {
-                        id: '000000012',
+                        id: '000000010',
                         nombre: 'Super Dona Chocolate',
                         categoria: 'Postre',
                         precio: 'X',
@@ -120,7 +102,7 @@ class ReposteriaDatabase {
                         imagen: 'dona_chocolate.jpg'
                     },
                     {
-                        id: '000000013',
+                        id: '000000011',
                         nombre: 'Ice Cream Sandwich',
                         categoria: 'Postre',
                         precio: 'X',
@@ -129,7 +111,7 @@ class ReposteriaDatabase {
                         imagen: 'icecream_sandwich.jpg'
                     },
                     {
-                        id: '000000014',
+                        id: '000000012',
                         nombre: 'Pastel de Nata',
                         categoria: 'Postre',
                         precio: 'X',
@@ -138,7 +120,7 @@ class ReposteriaDatabase {
                         imagen: 'pastel_nata.jpg'
                     },
                     {
-                        id: '000000015',
+                        id: '000000013',
                         nombre: 'Cheesecake',
                         categoria: 'Postre',
                         precio: 'X',
@@ -147,7 +129,7 @@ class ReposteriaDatabase {
                         imagen: 'cheesecake.jpg'
                     },
                     {
-                        id: '000000016',
+                        id: '000000014',
                         nombre: 'Berlina Rellena',
                         categoria: 'Postre',
                         precio: 'X',
@@ -156,7 +138,7 @@ class ReposteriaDatabase {
                         imagen: 'berlina_rellena.jpg'
                     },
                     {
-                        id: '000000017',
+                        id: '000000015',
                         nombre: 'Carrot Cake',
                         categoria: 'Postre',
                         precio: 'X',
