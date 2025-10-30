@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Asistente Pastelito</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #b4e0ee; }
+    #chatbot-container {
+      width: 350px;
+      margin: 50px auto;
+      background: #f2f0f4; /* tu fondo blanco */
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    #faq-list { list-style: none; padding: 0; display: none;  }
+    #faq-list li {
+      margin: 10px 0;
+      padding: 10px;
+      background: #e3dbee;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #faq-list li:hover { background: #eab6d8; }
+    #answer {
+      margin-top: 20px;
+      padding: 15px;
+      background: #9dd1de;
+      border-radius: 5px;
+      min-height: 40px;
+      display: none;
+    }
+    #next-btn {
+      display: block;
+      text-align: center;
+      background-color: #57e189;
+      color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 20px auto;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      max-width: 200px;
+      transition: background 0.3s;
+    }
+    #next-btn:hover { background-color: #29c768; }
+
+    #whatsapp-btn {
+      display: none; /* oculto al inicio */;
+      text-align: center;
+      background-color: #57e189;
+      color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 15px auto 0 auto;
+      font-weight: bold;
+      transition: background 0.3s;
+      width: 100%;
+      max-width: 200px;
+    }
+    #whatsapp-btn:hover { background-color: #29c768; }
+
+    h2 { text-align: center; color: #080107; }
+  </style>
+</head>
+<body>
+  <div id="chatbot-container">
+    <h2>Asistente Pastelito</h2>
+
+    <!-- Mensaje de presentación -->
+    <div id="greeting">
+      ¡Hola! 👋 Soy tu Asistente Pastelito. Presiona siguiente para ver el menú de preguntas:
+    </div>
+
+    <!-- Botón Siguiente -->
+    <div id="next-btn">Siguiente</div>
+
+    <!-- Lista de preguntas -->
+    <ul id="faq-list"></ul>
+
+    <!-- Respuesta -->
+    <div id="answer"></div>
+
+    <!-- Botón Whatsapp (inicalmente oculto) -->
+    <a id="whatsapp-btn" href="https://wa.me/51938951774" target="_blank">
+      💬 Escríbenos por WhatsApp
+    </a>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', async function() {
+    const faqList = document.getElementById('faq-list');
+    const answerDiv = document.getElementById('answer');
+    const nextBtn = document.getElementById('next-btn');
+    const whatsappBtn = document.getElementById('whatsapp-btn');
+    const greetingDiv = document.getElementById('greeting');
+
+    // Validación inicial de elementos DOM
+    if (!faqList || !answerDiv || !nextBtn || !whatsappBtn || !greetingDiv) {
+      console.error("Elementos del DOM del chatbot FAQ no encontrados. Asegúrate de que el HTML esté cargado y los IDs coincidan.");
+      return; // Salir si los elementos esenciales no existen
+    }
+
+    let productosDisponibles = [];
+    let respuestaProductos = "Ofrecemos una variedad de deliciosos postres. ¡Pregunta por nuestras promociones!"; // Valor por defecto
+
+    try {
+        if (typeof reposteriaDB !== 'undefined') { // Verificar que reposteriaDB esté disponible
+            productosDisponibles = await reposteriaDB.obtenerProductos();
+            console.log("Productos cargados de la DB:", productosDisponibles);
+            
+            // Construir la respuesta dinámica SÓLO si hay productos
+            if (productosDisponibles.length > 0) {
+                const listaNombresProductos = productosDisponibles.map(p => p.nombre).join(', ');
+                respuestaProductos = `Ofrecemos: ${listaNombresProductos}. ¡Pregunta por nuestras promociones!`;
+            } else {
+                respuestaProductos = "Actualmente no tenemos productos registrados, pero pronto tendremos deliciosas novedades. ¡Mantente atento!";
+            }
+        } else {
+            console.warn("reposteriaDB no está disponible. Usando respuesta estática para productos.");
+            // Mantener el valor por defecto de respuestaProductos
+        }
+    } catch (error) {
+        console.error("Error al obtener productos de la base de datos:", error);
+        // Mantener el valor por defecto de respuestaProductos en caso de error
+    }
+
+    // Definición de FAQs
+    const faqs = [
+      { pregunta: "¿Qué tipos de postres ofrecen?", respuesta: respuestaProductos }, // Respuesta dinámica
+      { pregunta: "¿Puedo elegir diferentes postres?", respuesta: "Por supuesto, tiene libre elección." },
+      { pregunta: "¿Tienen opciones sin azúcar o sin gluten?", respuesta: "Sí, tenemos una buena variedad de postres sin azúcar y/o sin gluten." },
+      { pregunta: "¿Hacen entregas a domicilio?", respuesta: "Sí, realizamos entregas a domicilio dentro de Lima con costo adicional según la zona." },
+      { pregunta: "¿Qué métodos de pago aceptan?", respuesta: "Aceptamos Yape y Plin (ambos con adelanto del 50%)." },
+      { pregunta: "¿Cuál es su horario de atención?", respuesta: "Lunes a sábado de 9:00 a.m. a 7:00 p.m." },
+      { pregunta: "¿Atienden domingos o feriados?", respuesta: "Domingos y feriados solo entregas programadas." }
+    ];
+
+    // Al presionar Siguiente
+    nextBtn.onclick = () => {
+      // Ocultar saludo y botón "Siguiente"
+      greetingDiv.style.display = 'none';
+      nextBtn.style.display = 'none';
+
+      // lista de preguntas y botón WhatsApp
+      faqList.style.display = 'block';
+      whatsappBtn.style.display = 'block';
+
+      // Limpiar la lista
+      faqList.innerHTML = ''; 
+
+      // Elementos de preguntas
+      faqs.forEach((faq) => {
+        const li = document.createElement('li');
+        li.textContent = faq.pregunta;
+        li.onclick = () => {
+          answerDiv.style.display = 'block';
+          answerDiv.textContent = faq.respuesta;
+        };
+        faqList.appendChild(li);
+      });
+    };
+  });
+  </script>
+</body>
+</html>

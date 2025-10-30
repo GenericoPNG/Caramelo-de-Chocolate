@@ -1,0 +1,216 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "X",
+      "email": "X@email.com",
+      "password": "12345",
+      "telefono": "+1234567890",
+      "direccion": {
+        "calle": "x",
+        "ciudad": "x",
+        "codigo_postal": "x"
+      },
+      "fecha_registro": "2024-01-15T10:30:00",
+      "ultimo_acceso": "2024-01-20T15:45:00",
+      "activo": true
+    }
+  ],
+  "tickets_soporte": [
+    {
+      "id": "TKT-2024-001",
+      "usuario_id": 1,
+      "asunto": "Pedido incompleto",
+      "descripcion": "Mi pedido llegó sin el pastel de chocolate",
+      "categoria": "problema_pedido",
+      "estado": "abierto",
+      "prioridad": "alta",
+      "fecha_creacion": "2024-01-20T14:30:00",
+      "fecha_actualizacion": "2024-01-20T14:30:00",
+      "mensajes": [
+        {
+          "id": 1,
+          "tipo": "usuario",
+          "contenido": "Mi pedido llegó incompleto",
+          "timestamp": "2024-01-20T14:30:00"
+        },
+        {
+          "id": 2,
+          "tipo": "soporte",
+          "contenido": "Lamentamos lo sucedido. Investigaremos inmediatamente.",
+          "timestamp": "2024-01-20T15:00:00"
+        }
+      ]
+    }
+  ],
+  "pedidos": [
+    {
+      "id": "VENDOPANCITO",
+      "usuario_id": 1,
+      "productos": [
+        {
+          "id": "PANCITO",
+          "nombre": "PANCITO",
+          "cantidad": 1,
+          "precio": 1.00
+        },
+        {
+          "id": "PAN",
+          "nombre": "PAN",
+          "cantidad": 1,
+          "precio": 1.50
+        }
+      ],
+      "total": 2.50,
+      "estado": "entregado",
+      "fecha_pedido": "2024-01-19T10:00:00",
+      "fecha_entrega": "2024-01-20T14:00:00",
+      "direccion_entrega": "x"
+    }
+  ],
+  "productos": [
+    {
+      "id": "000000003",
+      "nombre": "Shortcake de Fresa",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Delicioso postre con fresas.",
+      "disponible": true,
+      "imagen": "shortcake_fresa.jpg"
+    },
+    {
+      "id": "000000004",
+      "nombre": "Tarta de Fresa",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Clásica tarta con fresas frescas.",
+      "disponible": true,
+      "imagen": "tarta_fresa.jpg"
+    },
+    {
+      "id": "000000005",
+      "nombre": "Cupcake de Fresa",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Cupcake individual con topping de fresa.",
+      "disponible": true,
+      "imagen": "cupcake_fresa.jpg"
+    },
+    {
+      "id": "000000006",
+      "nombre": "Chiffon Cremoso",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Pastel chiffon ligero y cremoso.",
+      "disponible": true,
+      "imagen": "chiffon_cremoso.jpg"
+    },
+    {
+      "id": "000000007",
+      "nombre": "Cupcake Chocolate",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Cupcake con intenso sabor a chocolate.",
+      "disponible": true,
+      "imagen": "cupcake_chocolate.jpg"
+    },
+    {
+      "id": "000000008",
+      "nombre": "Whoopie de Pie",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Dos galletas suaves con relleno cremoso.",
+      "disponible": true,
+      "imagen": "whoopie_pie.jpg"
+    },
+    {
+      "id": "000000009",
+      "nombre": "Pavlova",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Merengue crujiente por fuera y suave por dentro.",
+      "disponible": true,
+      "imagen": "pavlova.jpg"
+    },
+    {
+      "id": "000000010",
+      "nombre": "Fresa con Crema",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Postre clásico de fresas frescas con crema batida.",
+      "disponible": true,
+      "imagen": "fresa_crema.jpg"
+    },
+    {
+      "id": "000000011",
+      "nombre": "Tartaleta de Limón",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Tartaleta con relleno de crema de limón y merengue.",
+      "disponible": true,
+      "imagen": "tartaleta_limon.jpg"
+    },
+    {
+      "id": "000000012",
+      "nombre": "Super Dona Chocolate",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Dona cubierta de chocolate y toppings.",
+      "disponible": true,
+      "imagen": "dona_chocolate.jpg"
+    },
+    {
+      "id": "000000013",
+      "nombre": "Ice Cream Sandwich",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Sándwich de galleta con helado y chispas de chocolate.",
+      "disponible": true,
+      "imagen": "icecream_sandwich.jpg"
+    },
+    {
+      "id": "000000014",
+      "nombre": "Pastel de Nata",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Pequeño pastel de crema tradicional.",
+      "disponible": true,
+      "imagen": "pastel_nata.jpg"
+    },
+    {
+      "id": "000000015",
+      "nombre": "Cheesecake",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Pastel de queso cremoso con base de galleta.",
+      "disponible": true,
+      "imagen": "cheesecake.jpg"
+    },
+    {
+      "id": "000000016",
+      "nombre": "Berlina Rellena",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Berlina esponjosa con relleno de mermelada.",
+      "disponible": true,
+      "imagen": "berlina_rellena.jpg"
+    },
+    {
+      "id": "000000017",
+      "nombre": "Carrot Cake",
+      "categoria": "Postre",
+      "precio": "X",
+      "descripcion": "Pastel de zanahoria con glaseado de queso crema.",
+      "disponible": true,
+      "imagen": "carrot_cake.jpg"
+    }
+  ],
+  "categorias_tickets": [
+    "problema_pedido",
+    "consulta_producto",
+    "sugerencia",
+    "queja",
+    "felicitacion",
+    "otros"
+  ]
+}
